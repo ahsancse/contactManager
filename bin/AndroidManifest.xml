@@ -29,8 +29,8 @@
         </activity>
         
         <activity
-            android:name="com.example.contactmanager.UsageActivity"
-            android:label="usage" >
+            android:name="com.example.contactmanager.Utility"
+            android:label="image" >
         </activity>
         
          <activity
@@ -44,13 +44,28 @@
         </activity>
         
          <activity
-            android:name="com.example.contactmanager.TestActivity"
-            android:label="test" >
+            android:name="com.example.contactmanager.ContactDetailsActivity"
+            android:label="Contact Details" >
+        </activity>
+        
+         <activity
+            android:name="com.example.contactmanager.UpdateDatabase"
+            android:label="update database" >
+        </activity>
+        
+         <activity
+            android:name="com.example.contactmanager.JSONParser"
+            android:label="JSON parser" >
         </activity>
  
     </application>
     
+    <!-- internet permission -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- hardware permission -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     
 
 </manifest>

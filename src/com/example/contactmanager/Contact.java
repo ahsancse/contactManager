@@ -1,5 +1,7 @@
 package com.example.contactmanager;
 
+import java.sql.Blob;
+
 import android.graphics.Bitmap;
 
 public class Contact {
@@ -13,24 +15,24 @@ public class Contact {
     private Bitmap photo;
     private String created_at;
     private String updated_at;
-    
+   
      
     // Empty constructor
     public Contact(){
          
     }
     // constructor
-    public Contact(int id, String name, String mobile_number,String home_number,String emailId,String created_at,
-    		String updated_at){
-        this.contact_id = id;
+    public Contact(String name, String mobile_number,String home_number,String emailId,String created_at,
+    		String updated_at, Bitmap photo){
+        
         this.contact_name = name;
         this.contact_mobile_number =mobile_number;
         this.contact_home_number=home_number;
         this.email_id=emailId;
         this.created_at=created_at;
         this.updated_at=updated_at;
-        
-        //this.photo=photo;
+        this.photo=photo;
+     
     }
      
     // constructor

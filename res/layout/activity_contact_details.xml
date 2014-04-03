@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ctMainLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
-
+    
     <RelativeLayout
         android:id="@+id/ctUpperBarLayout"
         android:layout_width="fill_parent"
         android:layout_height="45sp"
         android:background="@color/generalBackgroundColor"
         android:orientation="horizontal" >
-
-        <ImageButton
+    	
+    	<ImageButton
             android:id="@+id/ctArrowRightHeaderBtn"
             android:layout_width="45sp"
             android:layout_height="fill_parent"
@@ -22,28 +21,31 @@
             android:paddingLeft="10dp"
             android:scaleType="fitStart"
             android:src="@drawable/arrow_left" />
-
-        <TextView
-            android:id="@+id/ctName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/ctAddBtn"
-            android:layout_toRightOf="@+id/ctArrowRightHeaderBtn"
+    	
+    	<TextView
+    	    android:id="@+id/ctName"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentTop="true"
+    	    android:layout_toRightOf="@+id/ctArrowRightHeaderBtn" 
             android:ellipsize="marquee"
-            android:fadingEdge="horizontal"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:marqueeRepeatLimit="1"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:textColor="@color/textPrimaryColor"
-            android:textScaleX="1.5"
-            android:textSize="@dimen/defaultHeaderSize"
-            android:textStyle="bold" />
-
-        <ImageButton
+    	    android:fadingEdge="horizontal"
+    	    android:focusable="true"
+    	    android:focusableInTouchMode="true"
+    	    android:marqueeRepeatLimit="1"
+    	    android:maxLines="1"
+    	    android:scrollHorizontally="true"
+    	    android:singleLine="true"
+    	    android:textAlignment="center"
+    	    android:textColor="@color/textPrimaryColor"
+    	    android:textScaleX="1.5"
+    	    android:textSize="@dimen/defaultHeaderSize"
+    	    android:textStyle="bold" />
+    	    <!-- android:layout_toLeftOf="@+id/ctAddBtn" 
+    	    android:layout_toRightOf="@+id/ctArrowRightHeaderBtn" -->
+    	    
+    	    <!--
+    	<ImageButton
             android:id="@+id/ctAddBtn"
             android:layout_width="55sp"
             android:layout_height="wrap_content"
@@ -53,8 +55,13 @@
             android:background="@drawable/common_buttons_actions"
             android:contentDescription="@string/act_add_description"
             android:src="@drawable/ic_action_add_person" />
-    </RelativeLayout>
+    	    -->
 
+    	
+
+		
+</RelativeLayout>
+    
     <LinearLayout
         android:id="@+id/ctImageLayout"
         android:layout_width="fill_parent"
@@ -86,11 +93,10 @@
                 android:layout_below="@+id/ctOrganization"
                 android:maxLines="4"
                 android:paddingLeft="15sp"
-               
+                android:text="@string/contact_team"
                 android:textAlignment="viewStart"
                 android:textColor="@color/textPrimaryColor"
                 android:textSize="@dimen/defaultTitleSize" />
-                <!--   android:text="Function" -->
         </RelativeLayout>
 
         <ImageView
@@ -102,22 +108,103 @@
             android:layout_weight="0.4"
             android:contentDescription="@string/photo_description"
             android:paddingRight="10sp" />
+            <!-- android:src="@drawable/avatar_female_gray_frame_200x200" />  -->
 
     </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/ctScrollView"
+    
+    
+    	<TextView
+        android:id="@+id/name"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:paddingLeft="5sp" >
-
-        <LinearLayout
-            android:id="@+id/ctDetailsLayout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5sp"
-            android:orientation="vertical" >
-        </LinearLayout>
-    </ScrollView>
-
+        android:layout_height="wrap_content"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+    
+    	<TextView
+        android:id="@+id/mobile_number_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:text="@string/contact_mobile_title" /> 
+        
+    	<TextView
+        android:id="@+id/mobile_number"
+        android:onClick="onClick"
+		android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold" 
+        android:drawableRight="@drawable/ic_action_call"  /> 
+        
+    	
+        
+    	<View
+    	android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+        
+    	<TextView
+        android:id="@+id/home_number_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold" 
+        android:text="@string/contact_home_phone_title" />
+    
+    	<TextView
+        android:id="@+id/home_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:drawableRight="@drawable/ic_action_call"  />
+    	
+    	<View
+    	android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    
+    	<TextView
+        android:id="@+id/email_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold" 
+        android:text="@string/contact_mail_title" />
+    
+    
+    	<TextView
+        android:id="@+id/email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17sp"
+        android:textStyle="bold" 
+        android:drawableRight="@drawable/ic_action_email" />
+    	
+    	<View
+    	android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
 </LinearLayout>

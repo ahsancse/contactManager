@@ -52,51 +52,52 @@ public final class R {
         public static final int ic_action_settings=0x7f020010;
         public static final int ic_action_warning=0x7f020011;
         public static final int ic_launcher=0x7f020012;
-        public static final int logo=0x7f020013;
-        public static final int logo_grey=0x7f020014;
-        public static final int logo_sm=0x7f020015;
-        public static final int opendjsingle=0x7f020016;
-        public static final int rounded_button=0x7f020017;
-        public static final int rounded_edit_text=0x7f020018;
-        public static final int toggle_design=0x7f020019;
-        public static final int toggle_off=0x7f02001a;
-        public static final int toggle_on=0x7f02001b;
+        public static final int images=0x7f020013;
+        public static final int logo=0x7f020014;
+        public static final int logo_grey=0x7f020015;
+        public static final int logo_sm=0x7f020016;
+        public static final int opendjsingle=0x7f020017;
+        public static final int rounded_button=0x7f020018;
+        public static final int rounded_edit_text=0x7f020019;
+        public static final int toggle_design=0x7f02001a;
+        public static final int toggle_off=0x7f02001b;
+        public static final int toggle_on=0x7f02001c;
     }
     public static final class id {
         public static final int action_settings=0x7f090023;
-        public static final int btn_login=0x7f09001d;
+        public static final int btn_login=0x7f09001c;
         public static final int btn_next=0x7f090020;
-        public static final int ctAddBtn=0x7f090004;
-        public static final int ctArrowRightHeaderBtn=0x7f090002;
-        public static final int ctDetailsLayout=0x7f09000b;
-        public static final int ctFunction=0x7f090008;
-        public static final int ctImageLayout=0x7f090005;
-        public static final int ctLeftImageLayout=0x7f090006;
-        public static final int ctMainLayout=0x7f090000;
-        public static final int ctName=0x7f090003;
-        public static final int ctOrganization=0x7f090007;
-        public static final int ctPhoto=0x7f090009;
-        public static final int ctScrollView=0x7f09000a;
-        public static final int ctUpperBarLayout=0x7f090001;
-        public static final int empty_list_item=0x7f090010;
-        public static final int list_progress_bar=0x7f09000f;
-        public static final int list_search_bar=0x7f09000d;
-        public static final int list_search_text=0x7f09000e;
-        public static final int loginError=0x7f09001c;
-        public static final int lvSearchResult=0x7f09000c;
-        public static final int saveCredentials=0x7f09001b;
-        public static final int sw2AccountLowerBarLayout=0x7f090015;
-        public static final int sw2AccountStaticTitle=0x7f090016;
-        public static final int sw2EditAccountServerPassword=0x7f09001a;
-        public static final int sw2EditAccountUserName=0x7f090018;
-        public static final int sw2StaticAccountServerName=0x7f090017;
-        public static final int sw2StaticAccountServerPassword=0x7f090019;
-        public static final int sw2_image_title=0x7f090012;
-        public static final int sw2_scrollview=0x7f090014;
-        public static final int sw2_title=0x7f090013;
-        public static final int sw2_upper_bar_layout=0x7f090011;
-        public static final int textView1=0x7f09001e;
-        public static final int textView2=0x7f09001f;
+        public static final int contact_id=0x7f09001e;
+        public static final int contact_name=0x7f09001f;
+        public static final int ctArrowRightHeaderBtn=0x7f090001;
+        public static final int ctFunction=0x7f090006;
+        public static final int ctImageLayout=0x7f090003;
+        public static final int ctLeftImageLayout=0x7f090004;
+        public static final int ctName=0x7f090002;
+        public static final int ctOrganization=0x7f090005;
+        public static final int ctPhoto=0x7f090007;
+        public static final int ctUpperBarLayout=0x7f090000;
+        public static final int email=0x7f09000e;
+        public static final int email_label=0x7f09000d;
+        public static final int home_number=0x7f09000c;
+        public static final int home_number_label=0x7f09000b;
+        public static final int img=0x7f09001d;
+        public static final int list_search_text=0x7f09000f;
+        public static final int loginError=0x7f09001b;
+        public static final int mobile_number=0x7f09000a;
+        public static final int mobile_number_label=0x7f090009;
+        public static final int name=0x7f090008;
+        public static final int saveCredentials=0x7f09001a;
+        public static final int sw2AccountLowerBarLayout=0x7f090014;
+        public static final int sw2AccountStaticTitle=0x7f090015;
+        public static final int sw2EditAccountServerPassword=0x7f090019;
+        public static final int sw2EditAccountUserName=0x7f090017;
+        public static final int sw2StaticAccountServerName=0x7f090016;
+        public static final int sw2StaticAccountServerPassword=0x7f090018;
+        public static final int sw2_image_title=0x7f090011;
+        public static final int sw2_scrollview=0x7f090013;
+        public static final int sw2_title=0x7f090012;
+        public static final int sw2_upper_bar_layout=0x7f090010;
         public static final int title_bar_layout=0x7f090021;
         public static final int title_bar_logo=0x7f090022;
     }
@@ -104,7 +105,7 @@ public final class R {
         public static final int activity_contact_details=0x7f030000;
         public static final int activity_contact_search=0x7f030001;
         public static final int activity_login=0x7f030002;
-        public static final int test=0x7f030003;
+        public static final int list_items=0x7f030003;
         public static final int test1=0x7f030004;
         public static final int wso2_title_bar=0x7f030005;
     }
@@ -114,8 +115,8 @@ public final class R {
     public static final class string {
         /**  About activity 
          */
-        public static final int about_opendj=0x7f07002d;
-        public static final int about_website=0x7f07002e;
+        public static final int about_opendj=0x7f07002e;
+        public static final int about_website=0x7f07002f;
         public static final int act_add_description=0x7f070012;
         public static final int act_call_description=0x7f07000e;
         public static final int act_geolocation_description=0x7f070010;
@@ -124,14 +125,14 @@ public final class R {
         public static final int act_sms_description=0x7f07000f;
         /**  Actions 
          */
-        public static final int action_about=0x7f07001f;
-        public static final int action_search=0x7f070021;
-        public static final int action_settings=0x7f070020;
+        public static final int action_about=0x7f070020;
+        public static final int action_search=0x7f070022;
+        public static final int action_settings=0x7f070021;
         /**  Main 
          */
         public static final int app_name=0x7f070000;
         public static final int arrow_description=0x7f070004;
-        public static final int btn_next=0x7f070036;
+        public static final int btn_next=0x7f070037;
         public static final int contact_address_title=0x7f07000b;
         public static final int contact_home_phone_title=0x7f070009;
         public static final int contact_mail_title=0x7f07000a;
@@ -139,51 +140,52 @@ public final class R {
         /**  Contact activity 
          */
         public static final int contact_mobile_title=0x7f070008;
+        public static final int contact_team=0x7f070014;
         public static final int contact_warning_add_contact=0x7f070013;
-        public static final int login=0x7f07002b;
-        public static final int login_error=0x7f070024;
+        public static final int login=0x7f07002c;
+        public static final int login_error=0x7f070025;
         public static final int logo_description=0x7f070002;
         /**  Search activity 
          */
         public static final int photo_description=0x7f070003;
-        public static final int saveCredentials=0x7f07002c;
+        public static final int saveCredentials=0x7f07002d;
         public static final int search=0x7f070005;
         public static final int search_next=0x7f070007;
         public static final int search_previous=0x7f070006;
-        public static final int settings_action_add=0x7f070016;
-        public static final int settings_action_delete=0x7f070017;
-        public static final int settings_action_edit=0x7f070018;
-        public static final int settings_authentication_basic=0x7f07001d;
-        public static final int settings_authentication_title=0x7f07001c;
-        public static final int settings_no_server_configuration=0x7f07001e;
-        public static final int settings_selected_security_title=0x7f07001b;
-        public static final int settings_selected_server_title=0x7f07001a;
-        public static final int settings_selection_label=0x7f070019;
+        public static final int settings_action_add=0x7f070017;
+        public static final int settings_action_delete=0x7f070018;
+        public static final int settings_action_edit=0x7f070019;
+        public static final int settings_authentication_basic=0x7f07001e;
+        public static final int settings_authentication_title=0x7f07001d;
+        public static final int settings_no_server_configuration=0x7f07001f;
+        public static final int settings_selected_security_title=0x7f07001c;
+        public static final int settings_selected_server_title=0x7f07001b;
+        public static final int settings_selection_label=0x7f07001a;
         /**  Settings activity 
          */
-        public static final int settings_title=0x7f070014;
-        public static final int settings_title_description=0x7f070015;
-        public static final int sw2_account_password=0x7f070027;
-        public static final int sw2_account_password_hint=0x7f070028;
-        public static final int sw2_account_title=0x7f070023;
-        public static final int sw2_account_username=0x7f070025;
-        public static final int sw2_account_username_hint=0x7f070026;
-        public static final int sw2_security=0x7f070029;
-        public static final int sw2_security_ssl=0x7f07002a;
+        public static final int settings_title=0x7f070015;
+        public static final int settings_title_description=0x7f070016;
+        public static final int sw2_account_password=0x7f070028;
+        public static final int sw2_account_password_hint=0x7f070029;
+        public static final int sw2_account_title=0x7f070024;
+        public static final int sw2_account_username=0x7f070026;
+        public static final int sw2_account_username_hint=0x7f070027;
+        public static final int sw2_security=0x7f07002a;
+        public static final int sw2_security_ssl=0x7f07002b;
         /**  login  
          */
-        public static final int sw2_title=0x7f070022;
+        public static final int sw2_title=0x7f070023;
         /**  test 
          */
-        public static final int text1=0x7f070034;
-        public static final int text2=0x7f070035;
-        public static final int warning_approval=0x7f070030;
-        public static final int warning_call_number=0x7f070032;
+        public static final int text1=0x7f070035;
+        public static final int text2=0x7f070036;
+        public static final int warning_approval=0x7f070031;
+        public static final int warning_call_number=0x7f070033;
         /**  Status messages 
          */
-        public static final int warning_delete_server=0x7f07002f;
-        public static final int warning_no_result_found=0x7f070033;
-        public static final int warning_selected_server=0x7f070031;
+        public static final int warning_delete_server=0x7f070030;
+        public static final int warning_no_result_found=0x7f070034;
+        public static final int warning_selected_server=0x7f070032;
         public static final int windows_title=0x7f070001;
     }
     public static final class style {
