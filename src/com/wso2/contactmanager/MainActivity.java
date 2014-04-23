@@ -7,12 +7,14 @@ import com.wso2.contactmanager.R;
 import com.wso2.contactmanager.util.LoginHandler;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import org.apache.http.NameValuePair;
@@ -23,9 +25,10 @@ public class MainActivity extends Activity  {
 	private EditText edt_username;
 	private EditText edt_password;
 	private TextView txt_login_error;
+	private CheckBox save_credentials;
 	private String username;
 	private String password;
-	private boolean authenticated;
+	private boolean authenticated=false;
 	private ProgressDialog pdialog;
 	
 	@Override
@@ -37,6 +40,7 @@ public class MainActivity extends Activity  {
 		 edt_username=(EditText)findViewById(R.id.sw2EditAccountUserName);
 		 edt_password=(EditText)findViewById(R.id.sw2EditAccountServerPassword);
 		 txt_login_error=(TextView)findViewById(R.id.loginError);
+		 save_credentials=(CheckBox)findViewById(R.id.saveCredentials);
 		 txt_login_error.setVisibility(View.INVISIBLE);
 	        
         
@@ -51,12 +55,17 @@ public class MainActivity extends Activity  {
             	//System.out.println(username);
             	//System.out.println(password);
             	
-            	//new LoginValidator().execute();
-            	Intent i = new Intent(getApplicationContext(), SearchActivity.class);
-           		startActivity(i);
+            	LoginValidator login=new LoginValidator();
+            	login.execute();
+            	/*while(login.getStatus()==AsyncTask.Status.RUNNING){
+            		SystemClock.sleep(1000);
+            	}
+            	
+            	//Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+           		//startActivity(i);
            
             	
-            	/*if(authenticated){
+            	if(authenticated){
             		Intent i = new Intent(getApplicationContext(), SearchActivity.class);
                		startActivity(i);
             	}
@@ -84,11 +93,11 @@ public class MainActivity extends Activity  {
         @Override
         protected void onPreExecute() {
         	super.onPreExecute();
-            pdialog = new ProgressDialog(MainActivity.this);
+            /*pdialog = new ProgressDialog(MainActivity.this);
             pdialog.setMessage("Login Validation...");
             pdialog.setIndeterminate(false);
             pdialog.setCancelable(false);
-            pdialog.show();
+            pdialog.show();*/
         }
  
         /**
@@ -105,32 +114,30 @@ public class MainActivity extends Activity  {
                         "http://wso2.com/services/rest/ws/login.xml", "POST", params);
                 System.out.println(authenticated);
                 if(authenticated){
-                	System.out.println("authenticated");
                 	
-                	
-                }
-                else{
-                	System.out.println("problem");
-                }
+            		Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+               		startActivity(i);
+            	}
+            	else{
+            		txt_login_error.setVisibility(View.VISIBLE);
+            		edt_username.setText(null);
+            		edt_password.setText(null);
+            	}
         	} catch (Exception e) {
 				e.printStackTrace();
 			}
         	return null;
         }
         
-        protected void onPostExecute() {
+        /*protected void onPostExecute() {
+        	//System.out.print("post execute");
             // dismiss the dialog once got all details
-            pdialog.dismiss();
-            if(authenticated){
-            	Intent i = new Intent(getApplicationContext(), SearchActivity.class);
-            	startActivity(i);
-            }
-            else{
-            	txt_login_error.setVisibility(View.VISIBLE);
-            	edt_username.setText(null);
-            	edt_password.setText(null);
-            }
-        }
+            //pdialog.dismiss();
+        	
+        	
+        	
+            
+        }*/
     }
 	
 	

@@ -18,12 +18,14 @@ import com.wso2.contactmanager.util.Utility;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -59,15 +61,27 @@ public class SearchActivity extends ListActivity {
         bit=BitmapFactory.decodeResource(getResources(), R.drawable.avatar_male_gray_frame_200x200);
         
         //generate a secret key for encryption
-        Constants.enc=new EncryptionHandler();
-        Constants.enc.createSecretKey();
+        
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if(prefs.getBoolean("firstRun", true)) {            
+        	Constants.enc=new EncryptionHandler();
+            Constants.enc.createSecretKey();
+            new AddAllContacts().execute();
+            new LoadAllContacts().execute();
+            prefs.edit().putBoolean("firstRun", false).commit();
+        }
+        else{
+        	new LoadAllContacts().execute();
+        }
+        //Constants.enc=new EncryptionHandler();
+        //Constants.enc.createSecretKey();
         //create a shared prefe
         
         // Adding contacts in  Background Thread
-        new AddAllContacts().execute();
+        //new AddAllContacts().execute();
         
         //getting contacts in Background Thread
-        new LoadAllContacts().execute();
+        //new LoadAllContacts().execute();
         callAsynchronousUpdateTask();
         // listview for load contacts
         ListView lview = getListView();    
@@ -92,6 +106,9 @@ public class SearchActivity extends ListActivity {
         });
        
     }
+	
+	/*public void onBackPressed(){
+	}*/
 	
 	
  
@@ -223,7 +240,7 @@ public void callAsynchronousUpdateTask() {
             });
         }
     };
-    timer.schedule(doAsynchronousTask,60000*60*24); //execute in ev
+    timer.schedule(doAsynchronousTask,120000); //execute in ev
 }
 
 

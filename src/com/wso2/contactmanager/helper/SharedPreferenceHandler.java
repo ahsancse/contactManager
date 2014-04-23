@@ -32,12 +32,12 @@ public class SharedPreferenceHandler{
 	public void loadData(Context context){
 		sharedPreferences = context.getSharedPreferences("preference",0);
 		Editor editor = sharedPreferences.edit();
-		editor.putBoolean("dataLoaded", true);
+		editor.putBoolean("dataLoaded", false);
 	    editor.commit();
 	}
 	
 	public boolean getLoadedData(){
-		boolean preferences=sharedPreferences.getBoolean("dataLoaded",false);
+		boolean preferences=sharedPreferences.getBoolean("dataLoaded",true);
 		return preferences;
 		
 	}
