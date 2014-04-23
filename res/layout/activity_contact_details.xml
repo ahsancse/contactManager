@@ -44,23 +44,7 @@
     	    <!-- android:layout_toLeftOf="@+id/ctAddBtn" 
     	    android:layout_toRightOf="@+id/ctArrowRightHeaderBtn" -->
     	    
-    	    <!--
-    	<ImageButton
-            android:id="@+id/ctAddBtn"
-            android:layout_width="55sp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/common_buttons_actions"
-            android:contentDescription="@string/act_add_description"
-            android:src="@drawable/ic_action_add_person" />
-    	    -->
-
-    	
-
-		
-</RelativeLayout>
+   </RelativeLayout>
     
     <LinearLayout
         android:id="@+id/ctImageLayout"
@@ -76,7 +60,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/ctOrganization"
+                android:id="@+id/contact_designation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
@@ -84,19 +68,28 @@
                 android:paddingLeft="15sp"
                 android:textAlignment="viewStart"
                 android:textColor="@color/textPrimaryColor"
-                android:textSize="@dimen/defaultTitleSize" />
+                android:text="@string/designation"
+                android:textSize="@dimen/defaultTitleSize" 
+                android:singleLine="true"
+    	        android:textScaleX="1.5"
+    	        android:textStyle="bold"
+    	        android:layout_marginBottom="10dp"
+    	        android:layout_marginTop="5dp" />
 
             <TextView
-                android:id="@+id/ctFunction"
+                android:id="@+id/contact_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ctOrganization"
-                android:maxLines="4"
+                android:layout_below="@+id/contact_designation"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:paddingLeft="15sp"
-                android:text="@string/contact_team"
+                android:text="@string/product_team"
                 android:textAlignment="viewStart"
                 android:textColor="@color/textPrimaryColor"
-                android:textSize="@dimen/defaultTitleSize" />
+                android:textSize="@dimen/defaultTitleSize"
+                android:textScaleX="1.5"
+    	        android:textStyle="bold" />
         </RelativeLayout>
 
         <ImageView
@@ -134,19 +127,17 @@
         android:text="@string/contact_mobile_title" /> 
         
     	<TextView
-        android:id="@+id/mobile_number"
-        android:onClick="onClick"
-		android:clickable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:paddingTop="6dip"
-        android:paddingLeft="6dip"
-        android:textSize="17sp"
-        android:textStyle="bold" 
-        android:drawableRight="@drawable/ic_action_call"  /> 
-        
-    	
+    	    android:id="@+id/mobile_number"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_marginBottom="10dp"
+    	    android:clickable="true"
+    	    android:drawableRight="@drawable/ic_action_call"
+    	    android:onClick="onClick"
+    	    android:paddingLeft="6dip"
+    	    android:paddingTop="6dip"
+    	    android:textSize="17sp"
+    	    android:textStyle="bold" />
         
     	<View
     	android:layout_width="fill_parent"
