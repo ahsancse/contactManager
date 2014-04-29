@@ -240,7 +240,7 @@ public void callAsynchronousUpdateTask() {
             });
         }
     };
-    timer.schedule(doAsynchronousTask,120000); //execute in ev
+    timer.schedule(doAsynchronousTask,120000*1000); //execute in ev
 }
 
 

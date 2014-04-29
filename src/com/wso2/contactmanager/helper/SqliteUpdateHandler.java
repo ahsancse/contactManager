@@ -1,11 +1,8 @@
 package com.wso2.contactmanager.helper;
 
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import android.util.Log;
-
-import com.wso2.contactmanager.SearchActivity;
 import com.wso2.contactmanager.model.Contact;
 import com.wso2.contactmanager.util.Constants;
 
@@ -28,7 +25,6 @@ public class SqliteUpdateHandler {
 	private String email;
 	private String team;
 	
-	private static SqliteDatabaseHandler db;
 	private Contact contact;
 	
 	
@@ -48,7 +44,7 @@ public class SqliteUpdateHandler {
 				office_no=Constants.enc.encrypt(job.getString(TAG_PHONE));
 				email=Constants.enc.encrypt(job.getString(TAG_EMAIL));
 				team=Constants.enc.encrypt(job.getString(TAG_TEAM));
-				if(product_team.equalsIgnoreCase("")){
+				if(job.getString(TAG_PRODUCT_TEAM).equalsIgnoreCase("")){
 					product_team=team;
 				}
 				//db.addContact(new Contact(employee_number,employee_name,mobile,office_no,email,product_team,designation));

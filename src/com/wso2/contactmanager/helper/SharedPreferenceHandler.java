@@ -22,24 +22,29 @@ public class SharedPreferenceHandler{
 	}
 	
 	public void saveSharedPreference(Context context){
-		sharedPreferences = context.getSharedPreferences("preference",0);
+		sharedPreferences = context.getSharedPreferences("preference", Context.MODE_PRIVATE);
 		Editor editor = sharedPreferences.edit();
 		editor.putString("clientId","xublT5nkyRqsRRh");
 		editor.putString("clientSecret","TnLQPaNg6nv1eaP");
 		editor.commit();
 	}
 	
-	public void loadData(Context context){
-		sharedPreferences = context.getSharedPreferences("preference",0);
+	public void saveUserCredentials(Context context, String username, String password){
+		sharedPreferences = context.getSharedPreferences("preference",Context.MODE_PRIVATE);
 		Editor editor = sharedPreferences.edit();
-		editor.putBoolean("dataLoaded", false);
+		editor.putString("username", username);
+		editor.putString("password",password);
 	    editor.commit();
 	}
 	
-	public boolean getLoadedData(){
-		boolean preferences=sharedPreferences.getBoolean("dataLoaded",true);
-		return preferences;
-		
+	public String getUserName(){
+		String username=sharedPreferences.getString("username", null); // getting String
+		return username;
+	}
+	
+	public String getPassword(){
+		String password=sharedPreferences.getString("password", null); // getting String
+		return password;
 	}
 	
 

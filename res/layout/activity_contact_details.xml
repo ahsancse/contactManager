@@ -71,7 +71,7 @@
                 android:text="@string/designation"
                 android:textSize="@dimen/defaultTitleSize" 
                 android:singleLine="true"
-    	        android:textScaleX="1.5"
+    	        
     	        android:textStyle="bold"
     	        android:layout_marginBottom="10dp"
     	        android:layout_marginTop="5dp" />
@@ -88,7 +88,7 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/textPrimaryColor"
                 android:textSize="@dimen/defaultTitleSize"
-                android:textScaleX="1.5"
+                
     	        android:textStyle="bold" />
         </RelativeLayout>
 
@@ -102,18 +102,25 @@
             android:contentDescription="@string/photo_description"
             android:paddingRight="10sp" />
             <!-- android:src="@drawable/avatar_female_gray_frame_200x200" />  -->
+            
+           
 
     </LinearLayout>
     
+     <View
+    	android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
     
-    	<TextView
+    
+    <!--  	<TextView
         android:id="@+id/name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="6dip"
         android:paddingLeft="6dip"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" />   -->
     
     	<TextView
         android:id="@+id/mobile_number_label"

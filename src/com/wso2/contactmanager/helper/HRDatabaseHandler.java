@@ -14,7 +14,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 
+import android.R;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 
 import com.wso2.contactmanager.SearchActivity;
@@ -33,6 +36,7 @@ public class HRDatabaseHandler {
     private JSONArray jarray;
     private String client_id;
     private String client_secret;
+    private Context cont;
     // constructor
     public HRDatabaseHandler() {
  
@@ -80,6 +84,7 @@ public class HRDatabaseHandler {
     
     public void HRAPIHandler(Context context){
     	try {
+    		cont=context;
     		SharedPreferenceHandler sharedPreferences=new SharedPreferenceHandler();
     		sharedPreferences.saveSharedPreference(context);
     		client_id=sharedPreferences.getSharedClientID();
@@ -107,6 +112,7 @@ public class HRDatabaseHandler {
             	json2 = makeHttpRequest(url2 ,"GET", params2);
             }
             else{
+            	giveWarning();
             	System.out.println("Something wrong with URL 1");
             }
             
@@ -120,6 +126,7 @@ public class HRDatabaseHandler {
             	jarray=jparser.makeHttpRequest(url3,"GET", params3);
             }
             else{
+            	giveWarning();
             	System.out.println("Something wrong with URL 2");
             }
             
@@ -127,6 +134,9 @@ public class HRDatabaseHandler {
             	System.out.println("JSON ARRAY IS NOT NULL");
             	SqliteUpdateHandler handler=new SqliteUpdateHandler();
                 handler.updateDatabase(jarray);
+            }
+            else{
+            	giveWarning();
             }
             
             
@@ -157,5 +167,16 @@ public class HRDatabaseHandler {
         }
     	
     }
+    
+    private void giveWarning(){
+    	
+    	AlertDialog alertDialog = new AlertDialog.Builder(cont).create();
+    	alertDialog.setTitle("HR Server Down");
+    	alertDialog.setMessage("There is a problem in HR database when retreiving information.Contact HR for more details");
+    	
+    	// Set the Icon for the Dialog
+    	alertDialog.setIcon(R.drawable.alert_dark_frame);
+    	alertDialog.show();
+    } 
 }
 
