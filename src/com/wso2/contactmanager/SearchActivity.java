@@ -107,8 +107,9 @@ public class SearchActivity extends ListActivity {
        
     }
 	
-	/*public void onBackPressed(){
-	}*/
+	public void onBackPressed(){
+		
+	}
 	
 	
  
